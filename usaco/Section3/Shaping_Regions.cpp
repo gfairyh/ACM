@@ -24,9 +24,9 @@ struct rect
   int color;
 };
 
-int num[2510];
+int num[2510]; //记录各种颜色矩形面积
 int n;
-queue<rect>v;
+queue<rect>v;//未被染色的矩形存放队列
 
 void Read()
 {
@@ -99,7 +99,7 @@ int main()
 {
     Read();
     dfs(0);
-    num[1]+=num[0];
+    num[1]+=num[0]; // 未被染色的矩形默认为白色，即color=1
     for(int i=1; i<=2500; i++)
     {
     	if(num[i]!=0)
